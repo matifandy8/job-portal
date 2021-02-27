@@ -1,0 +1,54 @@
+@import "../../globalVariables.css";
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  bottom: 0px;
+  height: 150px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+.footer__logo {
+  color: var(--gray-color);
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.footer__column {
+  margin: 10px;
+}
+.footer__column-item {
+  display: flex;
+  flex-direction: column;
+}
+.footer__column-item a {
+  font-size: 13px;
+  color: var(--gray-color);
+  cursor: pointer;
+}
+.footer__column-item a:hover {
+  color: var(--primary-color);
+}
+
+.footer__social-buttons {
+  margin: 10px;
+}
+.footer__social-buttons a {
+  color: var(--gray-color);
+  font-size: 20px;
+  margin: 5px;
+}
+
+.footer__social-buttons a:hover {
+  color: var(--primary-color);
+}

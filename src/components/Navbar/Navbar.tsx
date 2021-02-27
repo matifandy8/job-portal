@@ -7,7 +7,7 @@ import {
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
-import { Button } from "./Button";
+
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -62,7 +62,9 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
         </ul>
-        <Button />
+        <Link to="sign-up">
+          <button className="sign-up__btn">Sign Up</button>
+        </Link>
       </nav>
     </>
   );

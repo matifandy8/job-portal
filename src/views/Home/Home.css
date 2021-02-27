@@ -1,11 +1,11 @@
 @import "../../globalVariables.css";
 
 .home__search {
-  background-color: var(--primary-color);
   display: flex;
   justify-content: center;
   margin: 5%;
   border-radius: 20px;
+  border: 1px solid red;
 }
 .home__search input {
   margin: 20px;

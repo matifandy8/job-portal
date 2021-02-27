@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import {
   AiOutlineHistory,
   AiOutlineHome,
@@ -8,45 +7,64 @@ import {
   AiOutlineQuestionCircle,
 } from "react-icons/ai";
 import { CgWorkAlt } from "react-icons/cg";
+import { Button } from "./Button";
+import "./Navbar.css";
 
 const Navbar: React.FC = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
-    <header className="navbar">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">
+    <>
+      <nav className="navbar">
+        <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
+          JobPortal
+          <i className="fab fa-firstdraft" />
+        </Link>
+        <div className="navbar__menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="navbar__item">
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               <AiOutlineHome />
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/jobs">
+          <li className="navbar__item">
+            <Link to="/jobs" className="nav-links" onClick={closeMobileMenu}>
               <CgWorkAlt />
               Jobs
             </Link>
           </li>
-          <li>
-            <Link to="/about">
+          <li className="navbar__item">
+            <Link to="/latest" className="nav-links" onClick={closeMobileMenu}>
               <AiOutlineHistory />
-              Lastest
+              Latest
             </Link>
           </li>
-          <li>
-            <Link to="/about">
+          <li className="navbar__item">
+            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
               <AiOutlineQuestionCircle />
               About
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link
+              to="/sign-up"
+              className="nav-links-mobile"
+              onClick={closeMobileMenu}
+            >
               <AiOutlineLogin />
-              Login
+              Sign Up
             </Link>
           </li>
         </ul>
+        <Button />
       </nav>
-    </header>
+    </>
   );
 };
 

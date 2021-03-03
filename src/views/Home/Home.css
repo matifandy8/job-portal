@@ -1,22 +1,71 @@
 @import "../../globalVariables.css";
 
+.home {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 30px;
+  border: 1px solid var(--secondary-color);
+  background-image: url("https://www.jobboom.com/res/images/recherche_acceuil.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  margin: 30px;
+  font-family: "Poppins", sans-serif;
+  color: var(--gray-color);
+  color: white;
+}
 .home__search {
   display: flex;
   justify-content: center;
-  margin: 5%;
+  margin: 2%;
   border-radius: 20px;
-  border: 1px solid red;
+  width: 80%;
+  background: rgba(51, 51, 51, 0.35);
+  border: 1px solid var(--gray-color);
 }
 .home__search input {
-  margin: 20px;
+  font-size: 15px;
+  margin: 30px;
   width: 30%;
-  height: 30px;
+  height: 40px;
+  border: 1px solid var(--gray-color);
+  border-radius: 5px;
 }
 .home__search button {
+  cursor: pointer;
+  padding: 10px;
   background-color: #000;
   color: white;
   border: none;
   border-radius: 10px;
   margin-top: 20px;
   height: 40px;
+}
+.home__search button:hover {
+  background-color: #111;
+}
+
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .home__search {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+  .home {
+    height: 300px;
+  }
 }

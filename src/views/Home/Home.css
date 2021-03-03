@@ -6,7 +6,8 @@
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border: 1px solid var(--secondary-color);
   background-image: url("https://www.jobboom.com/res/images/recherche_acceuil.jpg");
   background-position: center;
@@ -67,5 +68,11 @@ h1 {
   }
   .home {
     height: 300px;
+  }
+  .home__search input {
+    margin: 10px;
+  }
+  .home__search button {
+    margin: 0;
   }
 }

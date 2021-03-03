@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
         </ul>
-        <Link to="sign-up">
+        <Link to="/signup">
           <button className="sign-up__btn">Sign Up</button>
         </Link>
       </nav>

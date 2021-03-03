@@ -16,16 +16,16 @@ const Footer: React.FC = () => {
         <div className="footer__column">
           Follows us
           <div className="footer__social-buttons">
-            <a href="">
+            <a href="/">
               <i className="fab fa-instagram circle-icon"></i>
             </a>
-            <a href="">
+            <a href="/">
               <i className="fab fa-facebook circle-icon"></i>
             </a>
-            <a href="">
+            <a href="/">
               <i className="fab fa-linkedin-in circle-icon"></i>
             </a>
-            <a href="">
+            <a href="/">
               <i className="fab fa-twitter circle-icon"></i>
             </a>
           </div>

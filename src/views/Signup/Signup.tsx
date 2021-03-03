@@ -15,9 +15,9 @@ const Signup: React.FC = () => {
   });
 
   return (
-    <div className="login">
+    <div className="signup">
       <form onSubmit={onSubmit}>
-        <h1>Login</h1>
+        <h1>Signup</h1>
         <div>
           <input
             ref={register({ required: true })}

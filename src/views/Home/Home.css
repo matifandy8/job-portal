@@ -7,12 +7,11 @@
   align-items: center;
   border-radius: 20px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 115px;
   border: 1px solid var(--secondary-color);
   background-image: url("https://www.jobboom.com/res/images/recherche_acceuil.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 }
 h1 {
   margin: 30px;
@@ -55,19 +54,17 @@ h1 {
   h1 {
     font-size: 25px;
   }
-}
-
-@media screen and (max-width: 960px) {
   .home__search {
     flex-wrap: wrap;
   }
 }
+
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
   .home {
     height: 300px;
+  }
+  h1 {
+    font-size: 20px;
   }
   .home__search input {
     margin: 10px;

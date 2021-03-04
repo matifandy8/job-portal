@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./views/Home/Home";
+import Register from "./views/Register/Register";
 import Signup from "./views/Signup/Signup";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route exact component={Home} path="/" />
           <Route exact component={Signup} path="/signup" />
+          <Route exact component={Register} path="/register" />
         </Switch>
         <Footer />
       </Router>

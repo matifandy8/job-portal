@@ -1,16 +1,16 @@
 import React from "react";
-import "./Signup.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 type Profile = {
   firstname: string;
   lastname: string;
-  password: number;
   email: string;
+  password: number;
 };
 
-const Signup: React.FC = () => {
+const Register: React.FC = () => {
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
@@ -18,7 +18,7 @@ const Signup: React.FC = () => {
   });
 
   return (
-    <div className="signup">
+    <div className="register">
       <form onSubmit={onSubmit}>
         <h1>Signup</h1>
         <div>
@@ -42,6 +42,7 @@ const Signup: React.FC = () => {
           {errors.lastname && <div className="error">Enter your last name</div>}
         </div>
         <div>
+        <div>
           <input
             ref={register({ required: true })}
             id="email"
@@ -63,11 +64,11 @@ const Signup: React.FC = () => {
         </div>
         <button type="submit">Save</button>
         <h3>
-          Don't have a Account? <Link to="/register">Register</Link>
+          Already have an Account? <Link to="/signup">Sign Up</Link>
         </h3>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default Register;

@@ -19,7 +19,7 @@ const Signup: React.FC = () => {
 
   return (
     <div className="signup">
-      <form onSubmit={onSubmit}>
+      <form className="signup__form" onSubmit={onSubmit}>
         <h1>Signup</h1>
         <div>
           <input
@@ -61,7 +61,7 @@ const Signup: React.FC = () => {
           />
           {errors.password && <div className="error">Enter your Password</div>}
         </div>
-        <button type="submit">Save</button>
+        <button type="submit">Sign in</button>
         <h3>
           Don't have a Account? <Link to="/register">Register</Link>
         </h3>

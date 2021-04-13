@@ -24,6 +24,7 @@ const Signup: React.FC = () => {
         <div>
           <input
             ref={register({ required: true })}
+            className="signup__input"
             id="firstname"
             name="firstname"
             type="text"
@@ -34,6 +35,7 @@ const Signup: React.FC = () => {
         <div>
           <input
             ref={register({ required: true })}
+            className="signup__input"
             id="lastname"
             name="lastname"
             type="text"
@@ -44,6 +46,7 @@ const Signup: React.FC = () => {
         <div>
           <input
             ref={register({ required: true })}
+            className="signup__input"
             id="email"
             name="email"
             type="email"
@@ -54,6 +57,7 @@ const Signup: React.FC = () => {
         <div>
           <input
             ref={register({ required: true })}
+            className="signup__input"
             id="password"
             name="password"
             type="password"

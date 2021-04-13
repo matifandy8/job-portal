@@ -20,7 +20,7 @@ function Jobs() {
 
   return (
     <div className="jobs">
-      <h1 className="jobs__title">GitHub Jobs</h1>
+      <h1 className="jobs__title"> Jobs</h1>
       <SearchForm params={params} onParamChange={handleParamChange} />
       {/* <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} /> */}
       {loading && <h1>Loading...</h1>}

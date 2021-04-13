@@ -20,7 +20,7 @@ h3 {
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-form input {
+.register__input {
   height: 40px;
   width: 70%;
   margin: 20px;

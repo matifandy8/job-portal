@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/SearchForm.css";
 
 interface Props {
   params: any;
@@ -7,27 +8,27 @@ interface Props {
 
 export default function SearchForm({ params, onParamChange }: Props) {
   return (
-    <form className="SearchForm">
-      <div className="SearchForm__row">
-        <div className="SearchForm__group">
-          <label>Description</label>
+    <form className="searchForm">
+      <div className="searchForm__row">
+        <div className="searchForm__group">
           <input
             onChange={onParamChange}
             value={params.description}
+            placeholder="Search by Job Description"
             name="description"
             type="text"
           />
         </div>
-        <div className="SearchForm__group">
-          <label>Location</label>
+        <div className="searchForm__group">
           <input
             onChange={onParamChange}
             value={params.location}
+            placeholder="Search by Job Location"
             name="location"
             type="text"
           />
         </div>
-        <div className="SearchForm__group">
+        <div className="searchForm__group">
           <input
             onChange={onParamChange}
             value={params.full_time}

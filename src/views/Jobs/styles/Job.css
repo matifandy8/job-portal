@@ -1,0 +1,25 @@
+@import "../../../globalVariables.css";
+
+.job {
+  display: flex;
+  padding: 15px;
+}
+.job__body {
+  width: 100%;
+  border-bottom: 1px solid var(--ligray-color);
+}
+.job__img {
+  padding: 10px;
+  height: 100px;
+  width: 100px;
+}
+.job__title {
+  font-weight: 700;
+  color: var(--black-color);
+}
+.job__subtitle {
+  color: var(--gray-color);
+}
+.job__badge {
+  color: var(--gray-color);
+}

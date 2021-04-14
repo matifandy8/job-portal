@@ -3,31 +3,24 @@ import useFetchJobs from "./useFetchJobs";
 import Job from "./Job";
 // import JobsPagination from "./JobsPagination";
 import SearchForm from "./SearchForm";
+import "./styles/Jobs.css";
 
 function Jobs() {
   const [params, setParams] = useState({});
   const [page, setPage] = useState(1);
-  const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page);
-
-  function handleParamChange(e: React.FormEvent<HTMLInputElement>) {
-    const param = e.currentTarget.name;
-    const value = e.currentTarget.value;
-    setPage(1);
-    setParams((prevParams) => {
-      return { ...prevParams, [param]: value };
-    });
-  }
+  const { jobs, loading, error } = useFetchJobs(params, page);
 
   return (
     <div className="jobs">
-      <h1 className="jobs__title"> Jobs</h1>
-      <SearchForm params={params} onParamChange={handleParamChange} />
+      <SearchForm params={params} />
       {/* <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} /> */}
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error. Try Refreshing.</h1>}
-      {jobs.map((job: any) => {
-        return <Job key={job.id} job={job} />;
-      })}
+      <div className="allJobs">
+        {jobs.map((job: any) => {
+          return <Job key={job.id} job={job} />;
+        })}
+      </div>
       {/* <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage} /> */}
     </div>
   );

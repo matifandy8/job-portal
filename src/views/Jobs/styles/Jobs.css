@@ -1,0 +1,7 @@
+@import "../../../globalVariables.css";
+
+.allJobs {
+  border: 0.1px solid var(--ligray-color);
+  width: 70%;
+  margin: 30px;
+}

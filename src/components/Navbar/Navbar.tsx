@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar__logo" onClick={closeMobileMenu}>
-          JobPortal
+          Jobox
           <i className="fab fa-firstdraft" />
         </Link>
         <div className="navbar__menu-icon" onClick={handleClick}>

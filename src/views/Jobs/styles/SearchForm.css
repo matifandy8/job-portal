@@ -1,7 +1,8 @@
 .searchForm {
   display: flex;
   border-radius: 20px;
-  width: 70%;
+  width: 60%;
+  margin: 60px;
 }
 .searchForm__row {
   display: flex;
@@ -12,7 +13,6 @@
 }
 .searchForm input {
   font-size: 15px;
-  margin: 30px;
   width: 100%;
   height: 40px;
   border: 1px solid var(--ligray-color);

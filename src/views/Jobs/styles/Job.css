@@ -7,6 +7,7 @@
 .job__body {
   width: 100%;
   border-bottom: 1px solid var(--ligray-color);
+  margin-left: 30px;
 }
 .job__img {
   padding: 10px;
@@ -14,6 +15,7 @@
   width: 100px;
 }
 .job__title {
+  font-size: 20px;
   font-weight: 700;
   color: var(--black-color);
 }

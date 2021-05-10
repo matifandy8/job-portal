@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 type Profile = {
-  firstname: string;
-  lastname: string;
+  name: string;
   password: number;
   email: string;
 };
@@ -25,24 +24,14 @@ const Signup: React.FC = () => {
           <input
             ref={register({ required: true })}
             className="signup__input"
-            id="firstname"
-            name="firstname"
+            id="name"
+            name="name"
             type="text"
             placeholder="Type your FirstName"
           />
-          {errors.firstname && <div className="error">Enter your name</div>}
+          {errors.name && <div className="error">Enter your name</div>}
         </div>
-        <div>
-          <input
-            ref={register({ required: true })}
-            className="signup__input"
-            id="lastname"
-            name="lastname"
-            type="text"
-            placeholder="Type your LastName"
-          />
-          {errors.lastname && <div className="error">Enter your last name</div>}
-        </div>
+
         <div>
           <input
             ref={register({ required: true })}

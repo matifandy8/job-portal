@@ -2,10 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./Register.css";
+import Axios from "axios";
 
 type Profile = {
-  firstname: string;
-  lastname: string;
+  name: string;
   email: string;
   password: number;
 };
@@ -14,7 +14,17 @@ const Register: React.FC = () => {
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
-    alert(JSON.stringify(data));
+    // body: JSON.stringify(data),
+    const body = data;
+    const response = fetch("http://localhost:5000/authentication/register", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
   });
 
   return (
@@ -26,25 +36,12 @@ const Register: React.FC = () => {
             <input
               ref={register({ required: true })}
               className="register__input"
-              id="firstname"
-              name="firstname"
+              id="name"
+              name="name"
               type="text"
-              placeholder="Type your FirstName"
+              placeholder="Type your Name"
             />
-            {errors.firstname && <div className="error">Enter your name</div>}
-          </div>
-          <div>
-            <input
-              ref={register({ required: true })}
-              className="register__input"
-              id="lastname"
-              name="lastname"
-              type="text"
-              placeholder="Type your LastName"
-            />
-            {errors.lastname && (
-              <div className="error">Enter your last name</div>
-            )}
+            {errors.name && <div className="error">Enter your name</div>}
           </div>
 
           <div>

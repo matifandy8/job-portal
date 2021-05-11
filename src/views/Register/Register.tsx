@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./Register.css";
 import Axios from "axios";
+import { toast } from "react-toastify";
 
 type Profile = {
   name: string;
@@ -10,13 +11,13 @@ type Profile = {
   password: number;
 };
 
-const Register: React.FC = () => {
+const Register: React.FC = ({ setAuth }) => {
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
     // body: JSON.stringify(data),
     const body = data;
-    const response = fetch("http://localhost:5000/authentication/register", {
+    const response = fetch("http://localhost:5000/auth/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -24,7 +25,16 @@ const Register: React.FC = () => {
       body: JSON.stringify(body),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          setAuth(true);
+          toast("Login successfully!");
+        } else {
+          setAuth(false);
+          toast.error(parseRes);
+        }
+      });
   });
 
   return (

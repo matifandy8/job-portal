@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AiOutlineHistory,
@@ -9,12 +9,40 @@ import {
 import { CgWorkAlt } from "react-icons/cg";
 
 import "./Navbar.css";
+import { toast } from "react-toastify";
 
 const Navbar: React.FC = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const [name, setName] = useState("");
+
+  async function getName() {
+    try {
+      const response = await fetch("http://localhost:5000/dashboard", {
+        method: "GET",
+        headers: { token: localStorage.token },
+      });
+
+      const parseRes = await response.json();
+      console.log(parseRes);
+      setName(parseRes.user_name);
+      console.log(name);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
+  const logout = (e: any) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    toast("Logged out successfully!");
+  };
+
+  useEffect(() => {
+    getName();
+  }, []);
 
   return (
     <>

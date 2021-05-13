@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import "./Signup.css";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
 type Profile = {
@@ -9,7 +8,9 @@ type Profile = {
   email: string;
 };
 
-const Signup: React.FC = ({ setAuth }) => {
+const Signup = () => {
+  let history = useHistory();
+
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
@@ -26,11 +27,10 @@ const Signup: React.FC = ({ setAuth }) => {
       .then((data) => {
         if (data.token) {
           localStorage.setItem("token", data.token);
-          setAuth(true);
           toast("Login successfully!");
           console.log("Login successfully");
+          history.push("/");
         } else {
-          setAuth(false);
           toast.error(data);
         }
       });

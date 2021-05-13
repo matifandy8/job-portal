@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import "./styles/Job.css";
 
 interface Props {
@@ -7,8 +5,6 @@ interface Props {
 }
 
 export default function Job({ job }: Props) {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="job">
       <div>

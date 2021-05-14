@@ -13,10 +13,10 @@ import { toast } from "react-toastify";
 
 const Navbar: React.FC = () => {
   const [click, setClick] = useState(false);
-
+  const [name, setName] = useState("");
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const [name, setName] = useState("");
+  const [auth, setAuth] = useState(false);
 
   async function getName() {
     try {
@@ -42,6 +42,13 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     getName();
+    if (localStorage.getItem("token") !== null) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+
+    console.log(auth);
   }, []);
 
   return (
@@ -79,19 +86,38 @@ const Navbar: React.FC = () => {
               About
             </Link>
           </li>
-          <li>
-            <Link
-              to="/signup"
-              className="nav-links-mobile"
-              onClick={closeMobileMenu}
-            >
-              <AiOutlineLogin />
-              Sign Up
-            </Link>
-          </li>
+          {localStorage.getItem("token") === null ? (
+            <li>
+              <Link
+                to="/signup"
+                className="nav-links-mobile"
+                onClick={closeMobileMenu}
+              >
+                <AiOutlineLogin />
+                Sign Up
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link
+                to="/signup"
+                className="nav-links-mobile"
+                onClick={closeMobileMenu}
+              >
+                <AiOutlineLogin />
+                Logout
+              </Link>
+            </li>
+          )}
         </ul>
         <Link to="/signup">
-          <button className="sign-up__btn">Sign Up</button>
+          {localStorage.getItem("token") === null ? (
+            <button className="sign-up__btn">Sign in</button>
+          ) : (
+            <button className="logout__btn" onClick={(e) => logout(e)}>
+              Logout
+            </button>
+          )}
         </Link>
       </nav>
     </>

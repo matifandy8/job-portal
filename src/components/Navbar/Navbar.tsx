@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   AiOutlineHistory,
   AiOutlineHome,
@@ -12,6 +12,7 @@ import "./Navbar.css";
 import { toast } from "react-toastify";
 
 const Navbar: React.FC = () => {
+  let history = useHistory();
   const [click, setClick] = useState(false);
   const [name, setName] = useState("");
   const handleClick = () => setClick(!click);
@@ -38,6 +39,7 @@ const Navbar: React.FC = () => {
     e.preventDefault();
     localStorage.removeItem("token");
     toast("Logged out successfully!");
+    history.push("/signup");
   };
 
   useEffect(() => {

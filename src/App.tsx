@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./views/Home/Home";
@@ -13,7 +18,7 @@ toast.configure();
 function App() {
   return (
     <>
-      <Router>
+      {/* <Router>
         <Navbar />
         <Switch>
           <Route exact component={Home} path="/" />
@@ -23,6 +28,25 @@ function App() {
         </Switch>
         <Footer />
       </Router>
+      <Route exact component={Signup} path="/signup" /> */}
+
+      <BrowserRouter>
+        <div className="app">
+          <Switch>
+            <Route path="/signup">
+              <Signup />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/" exact>
+              <Navbar />
+              <Home />
+              <Footer />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
       <ToastContainer />
     </>
   );

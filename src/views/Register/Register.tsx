@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Register.css";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,7 @@ type Profile = {
 };
 
 const Register: React.FC = () => {
+  let history = useHistory();
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
@@ -27,6 +28,7 @@ const Register: React.FC = () => {
       .then((data) => {
         if (data.token) {
           localStorage.setItem("token", data.token);
+          history.push("/");
           toast("Login successfully!");
         } else {
           toast.error(data);

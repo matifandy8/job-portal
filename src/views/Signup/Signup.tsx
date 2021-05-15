@@ -10,11 +10,9 @@ type Profile = {
 
 const Signup = () => {
   let history = useHistory();
-
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
-    alert(JSON.stringify(data));
     const body = data;
     const response = fetch("http://localhost:5000/auth/login", {
       method: "POST",

@@ -44,6 +44,15 @@ function App() {
               <Home />
               <Footer />
             </Route>
+            <Route path="/jobs" exact>
+              <Navbar />
+              <Jobs />
+              <Footer />
+            </Route>
+            <Route path="/about" exact>
+              <Navbar />
+              <Footer />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>

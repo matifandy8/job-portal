@@ -100,16 +100,28 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
           ) : (
-            <li>
-              <Link
-                to="/signup"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                <AiOutlineLogin />
-                Logout
-              </Link>
-            </li>
+            <ul>
+              <li className="navbar__item">
+                <Link
+                  to="/about"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  <AiOutlineQuestionCircle />
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/signup"
+                  className="nav-links-mobile"
+                  onClick={closeMobileMenu}
+                >
+                  <AiOutlineLogin />
+                  Logout
+                </Link>
+              </li>
+            </ul>
           )}
         </ul>
         <Link to="/signup">

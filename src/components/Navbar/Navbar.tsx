@@ -100,37 +100,42 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
           ) : (
-            <ul>
-              <li className="navbar__item">
-                <Link
-                  to="/about"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  <AiOutlineQuestionCircle />
-                  Profile
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/signup"
-                  className="nav-links-mobile"
-                  onClick={closeMobileMenu}
-                >
-                  <AiOutlineLogin />
-                  Logout
-                </Link>
-              </li>
-            </ul>
+            <li>
+              <Link
+                to="/signup"
+                className="nav-links-mobile"
+                onClick={closeMobileMenu}
+              >
+                <AiOutlineLogin />
+                Logout
+              </Link>
+            </li>
           )}
         </ul>
         <Link to="/signup">
           {localStorage.getItem("token") === null ? (
             <button className="sign-up__btn">Sign in</button>
           ) : (
-            <button className="logout__btn" onClick={(e) => logout(e)}>
-              Logout
-            </button>
+            <div className="dropdown">
+              <button className="dropbtn">{name}</button>
+              <div className="dropdown-content">
+                <Link to="/profile">
+                  <a href="#">Profile</a>
+                </Link>
+                <Link to="/settings">
+                  <a href="#">Settings</a>
+                </Link>
+                <Link to="/mycv">
+                  <a href="#">My CV</a>
+                </Link>
+                <button className="logout__btn" onClick={(e) => logout(e)}>
+                  Logout
+                </button>
+              </div>
+            </div>
+            // <button className="logout__btn" onClick={(e) => logout(e)}>
+            //   Logout
+            // </button>
           )}
         </Link>
       </nav>

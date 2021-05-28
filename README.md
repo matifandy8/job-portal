@@ -1,3 +1,7 @@
+--------------Project under development-------------------
+Frontend-->Typescript,Reactjs
+Backend-->Nodejs,PostgreSQL
+
 
 
 ![jobportal](https://user-images.githubusercontent.com/59890285/119199465-7a37bf80-ba61-11eb-9ff5-d2f7998a4fa4.png)

@@ -1,5 +1,7 @@
 --------------Project under development-------------------
+----------------------------
 Frontend-->Typescript,Reactjs
+---------------------------
 Backend-->Nodejs,PostgreSQL
 
 

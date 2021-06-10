@@ -12,24 +12,13 @@ import Register from "./views/Register/Register";
 import Signup from "./views/Signup/Signup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Profile from "./views/Profile/Profile";
 
 toast.configure();
 
 function App() {
   return (
     <>
-      {/* <Router>
-        <Navbar />
-        <Switch>
-          <Route exact component={Home} path="/" />
-          <Route exact component={Jobs} path="/jobs" />
-          <Route exact component={Signup} path="/signup" />
-          <Route exact component={Register} path="/register" />
-        </Switch>
-        <Footer />
-      </Router>
-      <Route exact component={Signup} path="/signup" /> */}
-
       <BrowserRouter>
         <div className="app">
           <Switch>
@@ -49,8 +38,9 @@ function App() {
               <Jobs />
               <Footer />
             </Route>
-            <Route path="/about" exact>
+            <Route path="/profile" exact>
               <Navbar />
+              <Profile />
               <Footer />
             </Route>
           </Switch>

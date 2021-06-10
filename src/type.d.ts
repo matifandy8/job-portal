@@ -1,8 +1,8 @@
 interface IJob {
-    _id: string
-    description: string
-    location: string
-    full_time: string
+    job_id: string
+    job_description: string
+    job_location: string
+    job_full_time: string
 }
 
 type ApiDataType = {

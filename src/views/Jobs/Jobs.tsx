@@ -5,10 +5,12 @@ import SearchForm from "./SearchForm";
 import "./styles/Jobs.css";
 
 function Jobs() {
+  const [params, setParams] = useState({});
   const [jobs, setJobs] = useState<IJob[]>([]);
 
   useEffect(() => {
     fetchJobs();
+    console.log(jobs);
   }, []);
 
   const fetchJobs = (): void => {
@@ -19,13 +21,13 @@ function Jobs() {
 
   return (
     <div className="jobs">
-      {/* <SearchForm params={params} /> */}
+      <SearchForm params={params} />
 
       {/* {isLoading && <h1>Loading...</h1>}
       {error && <h1>Error. Try Refreshing.</h1>} */}
       <div className="allJobs">
         {jobs.map((job: IJob) => (
-          <div key={job._id}>{job.description}</div>
+          <Job job={job} />
         ))}
       </div>
     </div>

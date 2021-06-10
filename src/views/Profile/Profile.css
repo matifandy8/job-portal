@@ -1,0 +1,12 @@
+.profile_top {
+  height: 300px;
+  padding: 20px;
+  margin: 10px 40px;
+  border: 1px solid gray;
+}
+.profile_sections {
+  display: flex;
+}
+.profile_sections p {
+  margin-right: 30px;
+}

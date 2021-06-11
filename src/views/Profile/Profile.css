@@ -25,3 +25,12 @@
   margin: 30px;
   border: 1px solid rgb(201, 201, 201);
 }
+
+.profile_image {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

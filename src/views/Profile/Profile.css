@@ -12,16 +12,23 @@
   padding: 10px;
   border-top: 1px solid rgb(201, 201, 201);
 }
-.profile_sections p {
-  margin-right: 30px;
-}
-.profile_sections p:hover {
-  color: red;
-  cursor: pointer;
-}
 
 .section_info {
-  height: 600px;
-  margin: 30px;
+  height: 800px;
+  margin: 40px;
   border: 1px solid rgb(201, 201, 201);
+}
+
+.section__button {
+  margin-right: 30px;
+
+  border: none;
+  background-color: transparent;
+}
+
+.section__button:hover {
+  cursor: pointer;
+}
+.section__button:focus {
+  color: red;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppliedJobs from "../../components/AppliedJobs/AppliedJobs";
 import FollowingCompanies from "../../components/FollowingCompanies/FollowingCompanies";
 import ImgPreview from "../../components/ImgPreview/ImgPreview";
@@ -7,7 +7,7 @@ import SavedJobs from "../../components/SavedJobs/SavedJobs";
 import "./Profile.css";
 
 const Profile: React.FC = () => {
-  const { active, setActive } = useState<String[]>("MyCv");
+  const [active, setActive] = useState("MyCv");
 
   return (
     <div className="profile">
@@ -17,10 +17,25 @@ const Profile: React.FC = () => {
         </div>
         <div className="profile_sections">
           {/* function in every p */}
-          <button onClick={() => setActive("MyCv")}>My CV</button>
-          <button onClick={() => setActive("AppliedJobs")}>Applied jobs</button>
-          <button onClick={() => setActive("SavedJobs")}>Saved jobs</button>
-          <button onClick={() => setActive("FollowingCompanies")}>
+          <button className="section__button" onClick={() => setActive("MyCv")}>
+            My CV
+          </button>
+          <button
+            className="section__button"
+            onClick={() => setActive("AppliedJobs")}
+          >
+            Applied jobs
+          </button>
+          <button
+            className="section__button"
+            onClick={() => setActive("SavedJobs")}
+          >
+            Saved jobs
+          </button>
+          <button
+            className="section__button"
+            onClick={() => setActive("FollowingCompanies")}
+          >
             Following companies
           </button>
         </div>

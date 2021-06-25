@@ -16,7 +16,7 @@
 .section_info {
   height: 800px;
   margin: 40px;
-  border: 1px solid rgb(201, 201, 201);
+  /* border: 1px solid rgb(201, 201, 201); */
 }
 
 .section__button {

@@ -32,8 +32,11 @@ const Register: React.FC = () => {
           toast("Login successfully!");
         } else {
           toast.error(data);
+          toast("Register Failed!");
+          console.log(response);
         }
-      });
+      })
+      .catch(() => toast.error("Register Failed!"));
   });
 
   return (

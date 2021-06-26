@@ -7,6 +7,7 @@ import "./styles/Jobs.css";
 function Jobs() {
   const [params, setParams] = useState({});
   const [jobs, setJobs] = useState<IJob[]>([]);
+  const [status, setStatus] = useState("pending"); // resolved(ok)|rejected(BAD)|pending(default)
 
   useEffect(() => {
     fetchJobs();
@@ -16,15 +17,17 @@ function Jobs() {
   const fetchJobs = (): void => {
     getJobs()
       .then(({ data: { jobs } }: IJob[] | any) => setJobs(jobs))
-      .catch((err: Error) => console.log(err));
+      .then(() => setStatus("resolved"))
+      .catch(() => setStatus("rejected"));
   };
 
   return (
     <div className="jobs">
       <SearchForm params={params} />
-
-      {/* {isLoading && <h1>Loading...</h1>}
-      {error && <h1>Error. Try Refreshing.</h1>} */}
+      {status === "pending" && <h1 className="alert-pending">Loading...</h1>}
+      {status === "rejected" && (
+        <h1 className="alert-failed">Something failed :(</h1>
+      )}
       <div className="allJobs">
         {jobs.map((job: IJob) => (
           <Job job={job} />

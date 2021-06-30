@@ -13,6 +13,7 @@ import Signup from "./views/Signup/Signup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Profile from "./views/Profile/Profile";
+import JobInfo from "./views/JobInfo/JobInfo";
 
 toast.configure();
 
@@ -38,8 +39,15 @@ function App() {
               <Jobs />
               <Footer />
             </Route>
+            <Route path="/jobs/:id" exact>
+              <Navbar />
+              {/* redux data global state */}
+              <JobInfo />
+              <Footer />
+            </Route>
             <Route path="/profile" exact>
               <Navbar />
+              {/* redux data global state */}
               <Profile />
               <Footer />
             </Route>

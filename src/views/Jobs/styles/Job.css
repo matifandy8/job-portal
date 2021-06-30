@@ -3,6 +3,10 @@
 .job {
   display: flex;
   padding: 15px;
+  cursor: pointer;
+}
+.job:hover {
+  background-color: rgb(224, 224, 224);
 }
 .job__body {
   width: 100%;
@@ -24,4 +28,12 @@
 }
 .job__badge {
   color: var(--gray-color);
+}
+
+.job__save {
+  font-size: 12px;
+}
+.job__save:hover {
+  color: gray;
+  zoom: 1.1;
 }

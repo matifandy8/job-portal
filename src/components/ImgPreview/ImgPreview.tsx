@@ -1,11 +1,10 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ImgPreview.css";
-import { useEffect, useState } from "react";
 
 const ImgPreview: React.FC = () => {
-  const [image, setImage] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>();
+  const [image, setImage] = useState<any>();
+  const [preview, setPreview] = useState<any>();
+  const fileInputRef = useRef<any>();
 
   useEffect(() => {
     if (image) {
@@ -20,8 +19,7 @@ const ImgPreview: React.FC = () => {
   }, [image]);
   return (
     <div className="imgpreview">
-      <h2>img preview</h2>
-      {/* <form>
+      <form>
         {preview ? (
           <img
             src={preview}
@@ -32,9 +30,10 @@ const ImgPreview: React.FC = () => {
           />
         ) : (
           <button
-            onClick={(event: React.SyntheticEvent) => {
+            className="btn__file"
+            onClick={(event) => {
               event.preventDefault();
-              fileInputRef.current?.click();
+              fileInputRef.current.click();
             }}
           >
             Add Image
@@ -45,7 +44,7 @@ const ImgPreview: React.FC = () => {
           style={{ display: "none" }}
           ref={fileInputRef}
           accept="image/*"
-          onChange={(event: React.ChangeEvent) => {
+          onChange={(event: any) => {
             const file = event.target.files[0];
             if (file && file.type.substr(0, 5) === "image") {
               setImage(file);
@@ -54,7 +53,7 @@ const ImgPreview: React.FC = () => {
             }
           }}
         />
-      </form> */}
+      </form>
     </div>
   );
 };

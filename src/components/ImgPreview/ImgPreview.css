@@ -6,3 +6,20 @@
   justify-content: center;
   align-items: center;
 }
+img,
+.btn__file {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn__file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: 1px solid black;
+  background: transparent;
+  color: #000;
+}

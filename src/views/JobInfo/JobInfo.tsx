@@ -5,10 +5,13 @@ import { AiOutlineHeart } from "react-icons/ai";
 function JobInfo() {
   return (
     <div>
-      <h1>I am the new view Job info</h1>
       <div className="jobInfo">
         <div>
-          <img className="job__img" alt="" src="" />
+          <img
+            className="job__img"
+            alt=""
+            src="https://logos-marcas.com/wp-content/uploads/2020/04/Amazon-Logo.png"
+          />
         </div>
         <div className="jobInfo__body">
           <div className="job__title">Reactjs</div>
@@ -27,13 +30,15 @@ function JobInfo() {
         </div>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus, obcaecati excepturi unde ut nulla sit?
+          Necessitatibus, obcaecati excepturi unde ut nulla sit? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Consectetur, ullam!
         </p>
       </div>
       <div className="jobInfo__description">
         <div className="description__title">
           <h2>Job Description and Requirements</h2>
         </div>
+        <br />
         <h2>Description</h2>
         <br />
         <h3>About the role</h3>

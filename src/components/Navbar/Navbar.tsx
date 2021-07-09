@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
 
   const logout = (e: any) => {
     e.preventDefault();
-    localStorage.removeItem("token");
+    localStorage.clear();
     toast("Logged out successfully!");
     history.push("/signup");
   };
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
                 <Link to="/settings">
                   <a href="#">Settings</a>
                 </Link>
-                <Link to="/mycv">
+                <Link to="/profile">
                   <a href="#">My CV</a>
                 </Link>
                 <button className="logout__btn" onClick={(e) => logout(e)}>

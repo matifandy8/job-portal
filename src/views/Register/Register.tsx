@@ -15,7 +15,7 @@ const Register: React.FC = () => {
   const { register, handleSubmit, errors } = useForm<Profile>();
 
   const onSubmit = handleSubmit((data) => {
-    // body: JSON.stringify(data),
+    console.log(data)
     const body = data;
     const response = fetch("http://localhost:5000/auth/register", {
       method: "POST",
@@ -80,6 +80,16 @@ const Register: React.FC = () => {
               <div className="error">Enter your Password</div>
             )}
           </div>
+          <label htmlFor="role" className="form_label">
+          Select role
+          </label>
+          <select name="role" 
+            ref={register({
+           required: "select one option"
+            })}>
+             <option value="user">User</option>
+             <option value="company">Company</option>
+          </select>
           <button type="submit">Register</button>
           <h3>
             Already have an Account? <Link to="/signup">Sign Up</Link>

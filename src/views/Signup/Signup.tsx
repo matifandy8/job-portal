@@ -2,7 +2,7 @@ import "./Signup.css";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-// import LoginGoogle from "../../components/LoginGoogle/LoginGoogle";
+import LoginGoogle from "../../components/LoginGoogle/LoginGoogle";
 
 type Profile = {
   password: number;
@@ -64,9 +64,9 @@ const Signup = () => {
           {errors.password && <div className="error">Enter your Password</div>}
         </div>
         <button type="submit">Sign in</button>
-        {/* <div className="g-signin">
+        <div className="g-signin">
           <LoginGoogle />
-        </div> */}
+        </div>
         <h3>
           Don't have a Account? <Link to="/register">Register</Link>
         </h3>

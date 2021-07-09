@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const clientId = "Your-Client-Id";
+const clientId = "985473717392-c3ggcgj2ut1b2vih98fatq724mupnve6.apps.googleusercontent.com";
 
 function LoginGoogle() {
+  let history = useHistory();
+
   const [showloginButton, setShowloginButton] = useState(true);
   const [showlogoutButton, setShowlogoutButton] = useState(false);
   const onLoginSuccess = (res: any) => {
+    // localStorage.setItem("token", "tokengoogle");
+    // toast("Login successfully!");
+    // console.log("Login successfully");
+    // history.push("/");
     console.log("Login Success:", res.profileObj);
     setShowloginButton(false);
     setShowlogoutButton(true);

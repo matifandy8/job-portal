@@ -23,6 +23,7 @@ const ImgPreview: React.FC = () => {
         {preview ? (
           <img
             src={preview}
+            alt="img"
             style={{ objectFit: "cover" }}
             onClick={() => {
               setImage(null);

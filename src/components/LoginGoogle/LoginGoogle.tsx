@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-import { useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { useHistory } from "react-router-dom";
 
 const clientId = "985473717392-c3ggcgj2ut1b2vih98fatq724mupnve6.apps.googleusercontent.com";
 
 function LoginGoogle() {
-  let history = useHistory();
+  // let history = useHistory();
 
   const [showloginButton, setShowloginButton] = useState(true);
   const [showlogoutButton, setShowlogoutButton] = useState(false);

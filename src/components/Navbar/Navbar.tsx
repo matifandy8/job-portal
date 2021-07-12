@@ -49,10 +49,8 @@ const Navbar: React.FC = () => {
     } else {
       setAuth(false);
     }
-
-    console.log(auth);
   }, []);
-
+console.log(auth)
   return (
     <>
       <nav className="navbar">
@@ -120,22 +118,19 @@ const Navbar: React.FC = () => {
               <button className="dropbtn">{name}</button>
               <div className="dropdown-content">
                 <Link to="/profile">
-                  <a href="#">Profile</a>
+                  <a href="profile" >Profile</a>
                 </Link>
                 <Link to="/settings">
-                  <a href="#">Settings</a>
+                  <a href="setting">Settings</a>
                 </Link>
                 <Link to="/profile">
-                  <a href="#">My CV</a>
+                  <a href="profile">My CV</a>
                 </Link>
                 <button className="logout__btn" onClick={(e) => logout(e)}>
                   Logout
                 </button>
               </div>
             </div>
-            // <button className="logout__btn" onClick={(e) => logout(e)}>
-            //   Logout
-            // </button>
           )}
         </Link>
       </nav>

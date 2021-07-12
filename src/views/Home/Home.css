@@ -1,78 +1,84 @@
 @import "../../globalVariables.css";
 
 .home {
-  height: 350px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 20px;
   margin-top: 50px;
   margin-bottom: 115px;
   border: 1px solid var(--secondary-color);
-  background-image: url("https://www.jobboom.com/res/images/recherche_acceuil.jpg");
+  background-image: url("https://www.newkiwis.co.nz/media/1009/home-hero.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
 h1 {
-  margin: 30px;
+  font-size: 50px;
   font-family: "Poppins", sans-serif;
-  color: var(--gray-color);
   color: white;
-}
-.home__search {
-  display: flex;
-  justify-content: center;
-  border-radius: 20px;
-  width: 80%;
-  background: rgba(51, 51, 51, 0.35);
-  border: 1px solid var(--gray-color);
-}
-.home__search input {
-  font-size: 15px;
-  margin: 30px;
-  width: 30%;
-  height: 40px;
-  border: 1px solid var(--gray-color);
-  border-radius: 5px;
-}
-.home__search button {
-  cursor: pointer;
-  padding: 10px;
-  background-color: #000;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  margin-top: 30px;
-  height: 40px;
-}
-.home__search button:hover {
-  background-color: #111;
 }
 
 @media screen and (max-width: 960px) {
   h1 {
-    font-size: 25px;
+    font-size: 40px;
   }
-  .home__search {
-    flex-wrap: wrap;
+
+  .home__info {
+    margin-top: 100px;
+  }
+  .home__info-box {
+    margin: 40px;
+  }
+  .home__info-box a {
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .home {
-    height: 350px;
+    height: 550px;
   }
   h1 {
-    font-size: 20px;
+    font-size: 35px;
   }
-  .home__search {
-    padding: 10px;
+  .home__info {
+    flex-direction: column;
   }
-  .home__search input {
-    margin: 10px;
-    width: 60%;
+  .home__info-box a {
+    font-size: 14px;
   }
-  .home__search button {
-    margin: 0;
-  }
+}
+
+.home__info {
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.home__info-box {
+  margin: 20px;
+  background: rgba(51, 51, 51, 0.35);
+  padding:30px;
+}
+.job-seeker {
+  color: rgb(245, 241, 241);
+}
+.home__info-box h2 {
+  font-size: 27px;
+  margin: 10px;
+}
+
+.home__info-box a {
+  cursor: pointer;
+  font-size: 10px;
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  text-decoration: none;
 }

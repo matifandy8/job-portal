@@ -1,15 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home: React.FC = () => {
   return (
     <div className="home">
-      <h1>Find your next job faster.</h1>
-      <form className="home__search">
-        <input type="text" placeholder="Search Job" />
-        <input type="text" placeholder="Where" />
-        <button type="submit">Search Job</button>
-      </form>
+      <h1>Welcome to Jobox</h1>
+      <div className="home__info">
+        <div className="home__info-box">
+          <h2>
+            I'm a <strong className="job-seeker">Job Seeker</strong>
+          </h2>
+          <Link to="/jobs">Search for Jobs or upload Cv</Link>
+        </div>
+        <div className="home__info-box">
+          <h2>
+            I'm a <strong className="job-seeker">I'm an Employer</strong>
+          </h2>
+          <Link to="/jobs">Post Jobs and Find talent</Link>
+        </div>
+      </div>
     </div>
   );
 };

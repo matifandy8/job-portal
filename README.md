@@ -1,8 +1,8 @@
---------------Project under development-------------------
+--------------Jobox-Project under development-------------------
 ----------------------------
 Frontend-->Typescript,Reactjs
 ---------------------------
-Backend-->Nodejs,PostgreSQL
+Backend-->Nodejs,Expressjs,PostgreSQL
 
 
 
